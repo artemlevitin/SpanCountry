@@ -1,5 +1,7 @@
 package com.example.levitin.spancountryapp;
 
+import android.widget.ArrayAdapter;
+
 import java.util.ArrayList;
 
 public class WorldData {
@@ -8,6 +10,15 @@ public class WorldData {
     public ArrayList<Country> getCountries() {
         return countries;
     }
+
+    public ArrayList<String> getNameCountries(){
+        ArrayList<String> resArr = new ArrayList<>();
+        for (Country country :getCountries()) {
+            resArr.add(country.getCountryName());
+        }
+        return  resArr;
+    }
+
 
     public void setCountries(ArrayList<Country> countries) {
         this.countries = countries;
@@ -38,6 +49,15 @@ class Country{
      public void setCountryName(String countryName) {
          this.countryName = countryName;
      }
+
+     public ArrayList<String> getRegionName() {
+        ArrayList<String> resArr = new ArrayList<>();
+        for (Region region :getRegions()) {
+            resArr.add(region.getRegionName());
+        }
+        return  resArr;
+
+    }
  }
 class Region{
     private ArrayList<City> cities;
@@ -64,6 +84,15 @@ class Region{
      public void setRegionName(String regionName) {
          this.regionName = regionName;
      }
+
+    public ArrayList<String> getCityName() {
+        ArrayList<String> resArr = new ArrayList<>();
+        for (City city :getCities()) {
+            resArr.add(city.getCityName());
+        }
+        return  resArr;
+
+    }
  }
 
 class City{
