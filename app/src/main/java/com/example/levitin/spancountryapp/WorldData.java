@@ -19,7 +19,13 @@ public class WorldData {
         return  resArr;
     }
 
-
+public Country findCountry(String name){
+        for(Country country: countries){
+            if(country.getCountryName().equals(name))
+                return country;
+            }
+     return null;
+}
     public void setCountries(ArrayList<Country> countries) {
         this.countries = countries;
     }
@@ -46,6 +52,14 @@ class Country{
          return countryName;
      }
 
+     public Region findRregion(String name){
+        for(Region r : regions){
+            if(r.getRegionName().equals(name))
+                return r;
+          }
+           return null;
+     }
+
      public void setCountryName(String countryName) {
          this.countryName = countryName;
      }
@@ -65,7 +79,7 @@ class Region{
 
     Region(String regName,ArrayList<City> cities){
         this.regionName =regName;
-        this.cities =cities;
+        this.cities = cities;
 
     }
 
